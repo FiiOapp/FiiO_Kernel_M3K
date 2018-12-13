@@ -1,0 +1,23 @@
+menuconfig JZ_DMMU
+	bool "JZ DMMU Driver"
+	depends on SOC_4775
+	default y
+	help
+	  Support for Ingenic dmmu operations.
+
+choice
+	prompt "Dmmu Version Choice "
+	depends on JZ_DMMU
+	default JZ_DMMU_V10
+
+config JZ_DMMU_V10
+	bool "Dmmu V10 Driver"
+	help
+	  Support for Ingenic dmmu v10 operations.
+
+config JZ_DMMU_V12
+	bool "Dmmu V12 Driver"
+	help
+	  Support for Ingenic dmmu v12 operations.
+
+endchoice

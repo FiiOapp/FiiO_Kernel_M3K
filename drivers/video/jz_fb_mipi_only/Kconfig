@@ -1,0 +1,52 @@
+# JZ LCD V1.2  configuration
+
+menuconfig FB_MIPI_ONLY
+	tristate "JZ LCDC framebuffer for MIPI_ONLY"
+	depends on FB && SOC_M200
+	select FB_CFB_FILLRECT
+	select FB_CFB_COPYAREA
+	select FB_CFB_IMAGEBLIT
+	help
+	  Framebuffer support for the M200s SoC.
+
+choice
+	depends on FB_MIPI_ONLY
+	prompt "newtun2_plus backlight"
+	default LCD_EDO_E1392AM1
+
+config LCD_EDO_E1392AM1
+	tristate "EDO 1.39 inch AMOLED mipi-dsi panel(400x4000)"
+	depends on FB && JZ_MIPI_DSI
+	help
+	jz mipi dsi.dpi AMOLED display panel support
+
+endchoice
+
+config DELAY_AFTER_LCD_DISPLAY_ON
+	int "delay ms after the lcd display on, when fb resume"
+	depends on FB_MIPI_ONLY
+	default 0
+
+config JZ_MIPI_DSI
+	bool "jz mipi dsi interface"
+    depends on FB_MIPI_ONLY
+	default n
+
+
+config JZ_MIPI_DBI
+	bool "jz mipi dbi support mipi slcd"
+    depends on JZ_MIPI_DSI
+	default n
+
+config DSI_DPI_DEBUG
+	bool "only for tft.dpi interface debug and color test pattern"
+	depends on JZ_MIPI_DSI
+	default n
+
+config LINUX_DESKTOP_SUPPORT
+	bool "linux desktop support"
+    depends on FB_MIPI_ONLY
+	default n
+	help
+		this config is for jz_fb suport the buildroot or the debain desktop
+

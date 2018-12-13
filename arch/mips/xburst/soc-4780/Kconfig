@@ -1,0 +1,21 @@
+choice
+	prompt "Chip type"
+	depends on SOC_4780
+	default CHIP_4780
+
+config CHIP_4780
+       bool "chip-4780"
+       select TRACEPOINTS
+       select SYS_SUPPORTS_HIGHMEM
+       select GENERIC_CLOCKEVENTS_BROADCAST
+
+endchoice
+
+config CHIP_NAME
+	string
+	default "chip-4780" if CHIP_4780
+	default "chip-4775" if CHIP_4775
+	default "chip-m200" if CHIP_M200
+	default "chip-x1000" if CHIP_X1000
+
+source "arch/mips/xburst/soc-4780/chip-4780/Kconfig"

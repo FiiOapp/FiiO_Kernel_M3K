@@ -1,0 +1,278 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           MIPS R3000
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          110216 (bytes into file)
+  Flags:                             0x50001001, noreorder, o32, mips32
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         1
+  Size of section headers:           40 (bytes)
+  Number of section headers:         9
+  Section header string table index: 6
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .voice_mem        PROGBITS        81f00000 010000 008420 00  AX  0   0 16
+  [ 2] .rodata.str1.4    PROGBITS        81f08420 018420 000414 01 AMS  0   0  4
+  [ 3] .data             PROGBITS        81f08840 018840 001380 00  WA  0   0 16
+  [ 4] .bss              NOBITS          81f09bc0 019bc0 0002f0 00  WA  0   0 16
+  [ 5] .pdr              PROGBITS        00000000 019bc0 001280 00      0   0  4
+  [ 6] .shstrtab         STRTAB          00000000 01ae40 000045 00      0   0  1
+  [ 7] .symtab           SYMTAB          00000000 01aff0 000dd0 10      8  54  4
+  [ 8] .strtab           STRTAB          00000000 01bdc0 000fb3 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x010000 0x81f00000 0x81f00000 0x09bc0 0x09eb0 RWE 0x10000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .voice_mem .rodata.str1.4 .data .bss 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+The decoding of unwind sections for machine type MIPS R3000 is not currently supported.
+
+Symbol table '.symtab' contains 221 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 81f00000     0 SECTION LOCAL  DEFAULT    1 
+     2: 81f08420     0 SECTION LOCAL  DEFAULT    2 
+     3: 81f08840     0 SECTION LOCAL  DEFAULT    3 
+     4: 81f09bc0     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000     0 FILE    LOCAL  DEFAULT  ABS interface.c
+     7: 81f09bc0     4 OBJECT  LOCAL  DEFAULT    4 g_dmic_current_working_mo
+     8: 81f09bc4     4 OBJECT  LOCAL  DEFAULT    4 cpu_wakeup_by
+     9: 81f09bc8     4 OBJECT  LOCAL  DEFAULT    4 open_cnt
+    10: 81f09bd0     4 OBJECT  LOCAL  DEFAULT    4 g_dma_mode
+    11: 81f09bcc     4 OBJECT  LOCAL  DEFAULT    4 voice_wakeup_enabled
+    12: 81f09bd4     4 OBJECT  LOCAL  DEFAULT    4 dmic_record_enabled
+    13: 81f09bd8     4 OBJECT  LOCAL  DEFAULT    4 g_sleep_buffer
+    14: 00000000     0 FILE    LOCAL  DEFAULT  ABS wakeup_handler.c
+    15: 81f00600   376 FUNC    LOCAL  DEFAULT    1 check_voice_data_and_do_r
+    16: 81f09be0     4 OBJECT  LOCAL  DEFAULT    4 total_process_len
+    17: 81f08870    23 OBJECT  LOCAL  DEFAULT    3 __FUNCTION__.1779
+    18: 00000000     0 FILE    LOCAL  DEFAULT  ABS irq.c
+    19: 00000000     0 FILE    LOCAL  DEFAULT  ABS pm_ops.c
+    20: 00000000     0 FILE    LOCAL  DEFAULT  ABS dmic_ops.c
+    21: 81f01190    80 FUNC    LOCAL  DEFAULT    1 serial_put_hex
+    22: 81f0173c   248 FUNC    LOCAL  DEFAULT    1 dmic_irq_handler
+    23: 81f09cc0     4 OBJECT  LOCAL  DEFAULT    4 dmic_current_state
+    24: 81f09cc4     4 OBJECT  LOCAL  DEFAULT    4 cur_thr_value
+    25: 00000000     0 FILE    LOCAL  DEFAULT  ABS dma_ops.c
+    26: 00000000     0 FILE    LOCAL  DEFAULT  ABS tcu_timer.c
+    27: 81f023d0    80 FUNC    LOCAL  DEFAULT    1 serial_put_hex
+    28: 81f02420    36 FUNC    LOCAL  DEFAULT    1 stop_timer
+    29: 81f08850     4 OBJECT  LOCAL  DEFAULT    3 tcu_channel
+    30: 00000000     0 FILE    LOCAL  DEFAULT  ABS rtc_ops.c
+    31: 81f027b0   108 FUNC    LOCAL  DEFAULT    1 jzrtc_readl
+    32: 81f0281c   104 FUNC    LOCAL  DEFAULT    1 wait_write_ready
+    33: 81f08890    17 OBJECT  LOCAL  DEFAULT    3 __func__.1796
+    34: 81f02884   156 FUNC    LOCAL  DEFAULT    1 jzrtc_writel
+    35: 81f09e30     4 OBJECT  LOCAL  DEFAULT    4 is_period_rtc
+    36: 81f09e34    24 OBJECT  LOCAL  DEFAULT    4 old_config
+    37: 81f09e4c    24 OBJECT  LOCAL  DEFAULT    4 rtc_config
+    38: 00000000     0 FILE    LOCAL  DEFAULT  ABS jz_dma.c
+    39: 00000000     0 FILE    LOCAL  DEFAULT  ABS print.c
+    40: 81f09e74     4 OBJECT  LOCAL  DEFAULT    4 g_debug_level
+    41: 00000000     0 FILE    LOCAL  DEFAULT  ABS mem_buffer.c
+    42: 81f09ea0     4 OBJECT  LOCAL  DEFAULT    4 g_mem
+    43: 00000000     0 FILE    LOCAL  DEFAULT  ABS trigger_value_adjust.c
+    44: 00000000     0 FILE    LOCAL  DEFAULT  ABS recognization.c
+    45: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwObj.c
+    46: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwEngine.c
+    47: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwFront.c
+    48: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwMiniDecoder.c
+    49: 81f088e0   112 OBJECT  LOCAL  DEFAULT    3 g_fLaddTab.2164
+    50: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwMemory.c
+    51: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwMath.c
+    52: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwFrontConst.c
+    53: 00000000     0 FILE    LOCAL  DEFAULT  ABS IvwFrontCache.c
+    54: 81f029d0   220 FUNC    GLOBAL DEFAULT    1 rtc_init
+    55: 81f005f4     8 FUNC    GLOBAL DEFAULT    1 module_exit
+    56: 81f03920    80 FUNC    GLOBAL DEFAULT    1 IvwReset
+    57: 81f01654    52 FUNC    GLOBAL DEFAULT    1 dmic_disable_tri
+    58: 81f039ac   460 FUNC    GLOBAL DEFAULT    1 IvwChkNeededSize
+    59: 81f02258   260 FUNC    GLOBAL DEFAULT    1 dma_config_early_sleep
+    60: 81f0035c    28 FUNC    GLOBAL DEFAULT    1 set_handler
+    61: 81f00394    28 FUNC    GLOBAL DEFAULT    1 ioctl
+    62: 81f04688   204 FUNC    GLOBAL DEFAULT    1 IvwInitResidentRAM
+    63: 81f02040   272 FUNC    GLOBAL DEFAULT    1 build_circ_descs
+    64: 81f03f90   244 FUNC    GLOBAL DEFAULT    1 Ivw582A3038F8E94230886E80
+    65: 81f007c0   388 FUNC    GLOBAL DEFAULT    1 wakeup_handler
+    66: 81f032a8     8 FUNC    GLOBAL DEFAULT    1 wakeup_close
+    67: 81f00378    28 FUNC    GLOBAL DEFAULT    1 get_dma_address
+    68: 81f03970    60 FUNC    GLOBAL DEFAULT    1 IvwGetVersion
+    69: 81f07ab0    92 FUNC    GLOBAL DEFAULT    1 Ivw2702C1573CA10148616170
+    70: 81f01888   408 FUNC    GLOBAL DEFAULT    1 dmic_make_fifo_empty
+    71: 81f00050    12 FUNC    GLOBAL DEFAULT    1 get_voice_wakeup_state
+    72: 81f02eec   160 FUNC    GLOBAL DEFAULT    1 vtw_print_str
+    73: 81f032b0   452 FUNC    GLOBAL DEFAULT    1 process_buffer_data
+    74: 81f03474     8 FUNC    GLOBAL DEFAULT    1 recognizer_process_voice_
+    75: 81f09e70     4 OBJECT  GLOBAL DEFAULT    4 printk_callback
+    76: 81f08868     8 OBJECT  GLOBAL DEFAULT    3 thr_table
+    77: 81f00524    32 FUNC    GLOBAL DEFAULT    1 set_dma_channel
+    78: 81f00414    20 FUNC    GLOBAL DEFAULT    1 is_cpu_wakeup_by_dmic
+    79: 81f06934   344 FUNC    GLOBAL DEFAULT    1 IvwDB22C02C987F4A75A7E19A
+    80: 81f060a0   660 FUNC    GLOBAL DEFAULT    1 Ivw7AD047857C3441B28BDC3C
+    81: 81f03190     8 FUNC    GLOBAL DEFAULT    1 memcpy
+    82: 81f02380    36 FUNC    GLOBAL DEFAULT    1 dma_start
+    83: 81f02470    32 FUNC    GLOBAL DEFAULT    1 tcu_timer_del
+    84: 81f03e64   288 FUNC    GLOBAL DEFAULT    1 IvwSetThresh
+    85: 81f063a8  1420 FUNC    GLOBAL DEFAULT    1 Ivw8C99CEA68F55487A896D56
+    86: 81f01834    84 FUNC    GLOBAL DEFAULT    1 dmic_ioctl
+    87: 81f031f0    12 FUNC    GLOBAL DEFAULT    1 quantity_tri
+    88: 81f01c4c   556 FUNC    GLOBAL DEFAULT    1 dmic_store_data_from_32bi
+    89: 81f037e8   168 FUNC    GLOBAL DEFAULT    1 IvwRunStepEx
+    90: 81f01004   328 FUNC    GLOBAL DEFAULT    1 cpu_normal_sleep
+    91: 81f02da4   100 FUNC    GLOBAL DEFAULT    1 pdma_wait
+    92: 81f07030   296 FUNC    GLOBAL DEFAULT    1 Ivw49F0CE68AF0346218FB4F4
+    93: 81f00b08   236 FUNC    GLOBAL DEFAULT    1 irq_free
+    94: 81f00554    12 FUNC    GLOBAL DEFAULT    1 is_voice_wakeup_enabled
+    95: 81f031fc    32 FUNC    GLOBAL DEFAULT    1 adjust_trigger_value
+    96: 81f07158   628 FUNC    GLOBAL DEFAULT    1 Ivw94DD4B42EB7648F29A6F95
+    97: 81f08988    26 OBJECT  GLOBAL DEFAULT    3 g_ps16CMNCoef
+    98: 81f03890   144 FUNC    GLOBAL DEFAULT    1 IvwAppendAudioData
+    99: 81f040ac   168 FUNC    GLOBAL DEFAULT    1 Ivw16E3158F17AD496CB71B7D
+   100: 81f07b0c   228 FUNC    GLOBAL DEFAULT    1 Ivw26983DA03761D4E6EA1BE3
+   101: 81f05978  1000 FUNC    GLOBAL DEFAULT    1 Ivw299454EE8C4541DF9A741B
+   102: 81f09e18     4 OBJECT  GLOBAL DEFAULT    4 dst_buf
+   103: 81f03160    16 FUNC    GLOBAL DEFAULT    1 get_pIvwObjBuf
+   104: 81f0299c    52 FUNC    GLOBAL DEFAULT    1 rtc_irq_handler
+   105: 81f00778    12 FUNC    GLOBAL DEFAULT    1 voice_data_is_enough_to_r
+   106: 81f09bc0     0 NOTYPE  GLOBAL DEFAULT    4 __bss_end
+   107: 81f02174    12 FUNC    GLOBAL DEFAULT    1 dma_set_channel
+   108: 81f09bf0     8 OBJECT  GLOBAL DEFAULT    4 intc_mask
+   109: 81f00000     0 OBJECT  GLOBAL DEFAULT    1 interface
+   110: 81f012cc   100 FUNC    GLOBAL DEFAULT    1 dmic_set_channel
+   111: 81f08840     4 OBJECT  GLOBAL DEFAULT    3 dma_channel
+   112: 81f079f0    32 FUNC    GLOBAL DEFAULT    1 Ivw6F3AC527286E4ACE8A9D00
+   113: 81f05f28   376 FUNC    GLOBAL DEFAULT    1 Ivw6F3AC527286E4ACE832370
+   114: 81f01330   108 FUNC    GLOBAL DEFAULT    1 dmic_init
+   115: 81f07a38   120 FUNC    GLOBAL DEFAULT    1 ivwMemComp
+   116: 81f08950    26 OBJECT  GLOBAL DEFAULT    3 g_ps16CMNCoefMin
+   117: 81f05520   640 FUNC    GLOBAL DEFAULT    1 ivwDecodeInitScore
+   118: 81f02490   404 FUNC    GLOBAL DEFAULT    1 ms_to_count
+   119: 81f02690   164 FUNC    GLOBAL DEFAULT    1 tcu_timer_request
+   120: 81f0235c    36 FUNC    GLOBAL DEFAULT    1 dma_close
+   121: 81f09e1c     4 OBJECT  GLOBAL DEFAULT    4 src_buf
+   122: 81f051f8   160 FUNC    GLOBAL DEFAULT    1 IvwB3380E2D10DD4CF09C6BFF
+   123: 81f02b40   144 FUNC    GLOBAL DEFAULT    1 build_one_desc
+   124: 81f08860     8 OBJECT  GLOBAL DEFAULT    3 tri_cnt
+   125: 81f02e30   140 FUNC    GLOBAL DEFAULT    1 pdma_trans_addr
+   126: 81f00784    60 FUNC    GLOBAL DEFAULT    1 do_voice_recognization
+   127: 81f049cc  1844 FUNC    GLOBAL DEFAULT    1 Ivw2022E43F49DAC4CA0BRB8C
+   128: 81f01e80    80 FUNC    GLOBAL DEFAULT    1 dmic_check_and_receive_da
+   129: 81f08da4   576 OBJECT  GLOBAL DEFAULT    3 Ivw283835773CA10148616170
+   130: 81f02d74    48 FUNC    GLOBAL DEFAULT    1 pdma_start
+   131: 81f05100   248 FUNC    GLOBAL DEFAULT    1 Ivw2837A62AC32B84B58FDAF3
+   132: 81f09e24     4 OBJECT  GLOBAL DEFAULT    4 clk_enabled
+   133: 81f03028   176 FUNC    GLOBAL DEFAULT    1 vtw_print_hex
+   134: 81f06334   116 FUNC    GLOBAL DEFAULT    1 Ivw2D6D5D04A8B9C45A4C98CF
+   135: 81f00544    16 FUNC    GLOBAL DEFAULT    1 voice_wakeup_enable
+   136: 81f02180   216 FUNC    GLOBAL DEFAULT    1 dma_config_normal
+   137: 81f0792c   184 FUNC    GLOBAL DEFAULT    1 IvwCCC1A45DB2A74B96A92DD8
+   138: 81f011e0   124 FUNC    GLOBAL DEFAULT    1 dmic_clk_config
+   139: 81f02ec0    16 FUNC    GLOBAL DEFAULT    1 set_printk_callback
+   140: 81f03180    16 FUNC    GLOBAL DEFAULT    1 get_wakeup_key_resource_a
+   141: 81f0782c   256 FUNC    GLOBAL DEFAULT    1 IvwEAFF272FA3D149A1842D98
+   142: 81f0125c   112 FUNC    GLOBAL DEFAULT    1 gpio_as_dmic
+   143: 81f00340    28 FUNC    GLOBAL DEFAULT    1 handler
+   144: 81f02e08    40 FUNC    GLOBAL DEFAULT    1 pdma_end
+   145: 81f016a4    36 FUNC    GLOBAL DEFAULT    1 reconfig_thr_value
+   146: 81f09494   768 OBJECT  GLOBAL DEFAULT    3 Ivw2749BA873CA10148616170
+   147: 81f0114c    56 FUNC    GLOBAL DEFAULT    1 cpu_idle
+   148: 81f03480   756 FUNC    GLOBAL DEFAULT    1 IvwSetParam
+   149: 81f02aac   116 FUNC    GLOBAL DEFAULT    1 rtc_exit
+   150: 81f073cc  1120 FUNC    GLOBAL DEFAULT    1 Ivw021156235A784BA8979633
+   151: 81f00bf4   468 FUNC    GLOBAL DEFAULT    1 do_irq_handler
+   152: 81f02b20    28 FUNC    GLOBAL DEFAULT    1 process_dmic_timer
+   153: 81f030e0    96 FUNC    GLOBAL DEFAULT    1 mem_buffer_init
+   154: 81f009a4    36 FUNC    GLOBAL DEFAULT    1 intc_restore
+   155: 81f02bd0   420 FUNC    GLOBAL DEFAULT    1 pdma_config
+   156: 81f07bf0    92 FUNC    GLOBAL DEFAULT    1 Ivw0873AEAB2019445EA5D4EB
+   157: 81f09dd0     4 OBJECT  GLOBAL DEFAULT    4 suspend_desc
+   158: 81f047a4   100 FUNC    GLOBAL DEFAULT    1 Ivw188A484C5F41443CA65C63
+   159: 81f09bc0     0 NOTYPE  GLOBAL DEFAULT    4 __bss_start
+   160: 81f03198    88 FUNC    GLOBAL DEFAULT    1 memset
+   161: 81f01e78     8 FUNC    GLOBAL DEFAULT    1 dmic_store_data_from_fifo
+   162: 81f01a20   556 FUNC    GLOBAL DEFAULT    1 dmic_store_data_from_16bi
+   163: 81f013b4   672 FUNC    GLOBAL DEFAULT    1 dmic_init_mode
+   164: 81f009c8   320 FUNC    GLOBAL DEFAULT    1 irq_request
+   165: 81f07a10    40 FUNC    GLOBAL DEFAULT    1 Ivw138EB59E9E47409CA50580
+   166: 81f045ac    48 FUNC    GLOBAL DEFAULT    1 Ivw2681C72D235E04AAB07BE4
+   167: 81f003b0    44 FUNC    GLOBAL DEFAULT    1 cache_prefetch
+   168: 81f023a4    36 FUNC    GLOBAL DEFAULT    1 dma_stop
+   169: 81f0489c   304 FUNC    GLOBAL DEFAULT    1 Ivw235355BEEBC4D4A84148AD
+   170: 81f00460   196 FUNC    GLOBAL DEFAULT    1 get_sleep_process
+   171: 81f04154  1112 FUNC    GLOBAL DEFAULT    1 Ivw9B2872550B104C21A43D30
+   172: 81f09e20     4 OBJECT  GLOBAL DEFAULT    4 save_tcsr
+   173: 81f00dd0   564 FUNC    GLOBAL DEFAULT    1 cpu_deep_sleep
+   174: 81f03140    16 FUNC    GLOBAL DEFAULT    1 get_rx_fifo
+   175: 81f0896c    26 OBJECT  GLOBAL DEFAULT    3 g_ps16CMNCoefMax
+   176: 81f00950    84 FUNC    GLOBAL DEFAULT    1 intc_save
+   177: 81f03774   116 FUNC    GLOBAL DEFAULT    1 IvwRunStep
+   178: 81f05d60   456 FUNC    GLOBAL DEFAULT    1 Ivw6F3AC527286E4ACE8A6700
+   179: 81f02150    36 FUNC    GLOBAL DEFAULT    1 dma_get_dma_address
+   180: 81f08138   744 FUNC    GLOBAL DEFAULT    1 Ivw22E87D039917F40EF0FA2C
+   181: 81f04808   148 FUNC    GLOBAL DEFAULT    1 Ivw26983DA04861D5FBEA8BC3
+   182: 81f01688    28 FUNC    GLOBAL DEFAULT    1 dmic_disable
+   183: 81f02920   124 FUNC    GLOBAL DEFAULT    1 rtc_set_alarm
+   184: 81f08fe4   800 OBJECT  GLOBAL DEFAULT    3 Ivw27F72D573CA10148616170
+   185: 81f0139c    24 FUNC    GLOBAL DEFAULT    1 dmic_enable
+   186: 81f02ee0    12 FUNC    GLOBAL DEFAULT    1 get_debug_print_level
+   187: 81f03150    16 FUNC    GLOBAL DEFAULT    1 get_dma_desc_addr
+   188: 81f09bf8   200 OBJECT  GLOBAL DEFAULT    4 jz_irq_register_array
+   189: 81f03220   136 FUNC    GLOBAL DEFAULT    1 wakeup_open
+   190: 81f03d08   348 FUNC    GLOBAL DEFAULT    1 IvwCreate
+   191: 81f07c50  1256 FUNC    GLOBAL DEFAULT    1 Ivw24AFEE9E6B23D4568D38D2
+   192: 81f01ed0   360 FUNC    GLOBAL DEFAULT    1 dmic_get_voice_data
+   193: 81f003dc    28 FUNC    GLOBAL DEFAULT    1 get_resource_addr
+   194: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND start
+   195: 81f00560   148 FUNC    GLOBAL DEFAULT    1 module_init
+   196: 81f02734   112 FUNC    GLOBAL DEFAULT    1 tcu_timer_release
+   197: 81f003f8    28 FUNC    GLOBAL DEFAULT    1 process_data
+   198: 81f06a8c  1444 FUNC    GLOBAL DEFAULT    1 Ivw5A9FFFE5F7674764AF1077
+   199: 81f0006c   460 FUNC    GLOBAL DEFAULT    1 open
+   200: 81f09cd0   256 OBJECT  GLOBAL DEFAULT    4 sleep_desc
+   201: 81f09e80    32 OBJECT  GLOBAL DEFAULT    4 g_mem_buffer_alloc
+   202: 81f057a0   472 FUNC    GLOBAL DEFAULT    1 Ivw6FF21B97FD10412FA6EDD5
+   203: 81f02ed0    16 FUNC    GLOBAL DEFAULT    1 set_debug_print_level
+   204: 81f02624   108 FUNC    GLOBAL DEFAULT    1 tcu_timer_mod
+   205: 81f016c8   116 FUNC    GLOBAL DEFAULT    1 dmic_set_samplerate
+   206: 81f05298   640 FUNC    GLOBAL DEFAULT    1 Ivw2022E41F49DAC4CF0BCC85
+   207: 81f09794  1060 OBJECT  GLOBAL DEFAULT    3 Ivw275F8CA73CA10148616170
+   208: 81f09304   400 OBJECT  GLOBAL DEFAULT    3 Ivw28226EA73CA10148616170
+   209: 81f00428    56 FUNC    GLOBAL DEFAULT    1 set_sleep_buffer
+   210: 81f04760    68 FUNC    GLOBAL DEFAULT    1 Ivw6D2E95BD768E495BA5730E
+   211: 81f03b78   400 FUNC    GLOBAL DEFAULT    1 IvwCreateEx
+   212: 81f04084    40 FUNC    GLOBAL DEFAULT    1 Ivw20CE383A817684C9CA7B80
+   213: 81f00238   264 FUNC    GLOBAL DEFAULT    1 close
+   214: 81f09dd4    68 OBJECT  GLOBAL DEFAULT    4 config
+   215: 81f045dc   172 FUNC    GLOBAL DEFAULT    1 IvwResValidate
+   216: 81f089a4  1024 OBJECT  GLOBAL DEFAULT    3 Ivw27E189A73CA10148616170
+   217: 81f02444    44 FUNC    GLOBAL DEFAULT    1 tcu_irq_handler
+   218: 81f0005c    16 FUNC    GLOBAL DEFAULT    1 set_wakeup_source_type
+   219: 81f02f8c   156 FUNC    GLOBAL DEFAULT    1 vtw_print_str2
+   220: 81f03170    16 FUNC    GLOBAL DEFAULT    1 get_nReisdentBuf
+
+No version information found in this file.

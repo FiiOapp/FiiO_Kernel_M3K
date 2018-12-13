@@ -1,0 +1,18 @@
+[PATCH-1] usb-nosuspend-84e25ebf1f
+	Used for suspend without close dwc2 usb controller, make usb be wakeup source
+	Note: Has nothing to do with the USB suspend/resume protocol.
+	DO AS FOLLOW
+	#git reset --hard 05c7299a9db82   /*or not*/
+	#patch p1 < patch/usb-nosuspend-84e25ebf1f
+	#git st
+		On branch ingenic-master
+		Changes not staged for commit:
+		(use "git add <file>..." to update what will be committed)
+		(use "git checkout -- <file>..." to discard changes in working directory)
+
+		modified:   arch/mips/xburst/soc-x1000/include/soc/tcsm_layout.h
+		modified:   drivers/usb/dwc2/core.c
+		modified:   drivers/usb/dwc2/dwc2_jz.c
+		modified:   drivers/usb/dwc2/ep0.c
+		modified:   drivers/usb/dwc2/gadget.c
+

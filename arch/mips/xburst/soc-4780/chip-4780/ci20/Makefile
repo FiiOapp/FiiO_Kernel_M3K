@@ -1,0 +1,6 @@
+
+CFLAGS_KERNEL	+= -I$(srctree)/arch/mips/xburst/$(CONFIG_SOC_NAME)/$(CONFIG_CHIP_NAME)/$(CONFIG_PRODUCT_NAME)/$(CONFIG_BOARD_NAME)
+CFLAGS_MODULE	+= -I$(srctree)/arch/mips/xburst/$(CONFIG_SOC_NAME)/$(CONFIG_CHIP_NAME)/$(CONFIG_PRODUCT_NAME)/$(CONFIG_BOARD_NAME)
+
+obj-y		+= common/
+obj-y		+= $(CONFIG_BOARD_NAME)/

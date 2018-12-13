@@ -1,0 +1,19 @@
+
+
+choice
+	prompt "Board type"
+	depends on CHIP_X1500
+	default PRODUCT_X1500_YAK
+
+config  PRODUCT_X1500_YAK
+    bool "product x1500 yak"
+
+endchoice
+
+if PRODUCT_X1500_YAK
+config PRODUCT_NAME
+string
+default "yak"
+source "arch/mips/xburst/soc-x1000/chip-x1500/yak/Kconfig"
+endif
+

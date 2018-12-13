@@ -1,0 +1,13 @@
+choice
+	prompt "Core Board Version"
+	depends on BOARD_NEWTON2P
+	default BOARD_NEWTON2P_V10
+
+config BOARD_NEWTON2P_V10
+       bool "NEWTON2_PLUS_V10"
+
+endchoice
+
+config BOARD_NAME
+	string
+	default "newton2p_v10" if BOARD_NEWTON2P_V10

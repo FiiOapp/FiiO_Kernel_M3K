@@ -1,0 +1,21 @@
+config DRM_JZDRM
+	tristate "DRM Support for Ingenic LCDC Display Controller"
+	depends on DRM
+	select DRM_KMS_HELPER
+	select DRM_KMS_FB_HELPER
+	select DRM_KMS_CMA_HELPER
+	select DRM_GEM_CMA_HELPER
+	select VIDEOMODE_HELPERS
+	select BACKLIGHT_CLASS_DEVICE
+	select BACKLIGHT_LCD_SUPPORT
+	help
+	  Choose this option if you have an Ingenic SoC with LCDC display
+	  controller, for example the CI20 board
+
+config JZ_MIPI_DSI_MODE1
+	bool "mipi dsi interface control from crtc"
+	depends on JZ_MIPI_DSI
+
+config JZ_MIPI_DSI_MODE2
+	bool "mipi dsi interface control from encoder and connector"
+	depends on JZ_MIPI_DSI

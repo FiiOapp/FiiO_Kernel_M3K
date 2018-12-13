@@ -1,0 +1,14 @@
+choice
+	prompt "BOARD type"
+	depends on CI20
+	default CI20_V10
+
+config CI20_V10
+       bool "ci20 v10"
+       depends on CI20
+
+endchoice
+
+config BOARD_NAME
+	string
+	default "ci20_v10" if CI20_V10

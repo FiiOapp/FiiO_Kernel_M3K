@@ -1,0 +1,4 @@
+config EXFAT_FS
+	tristate "exfat filesystem support"
+	help
+	   the type of exfat for TF card,if you're not sure,select it.

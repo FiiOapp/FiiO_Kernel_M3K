@@ -1,0 +1,22 @@
+menu "Linux extra drivers"
+
+config LINUX_EXTRAS
+	bool "Linux Extra Drivers"
+	default N
+	---help---
+	  Enable support for various drivers needed on the Linux platform
+
+if LINUX_EXTRAS
+
+config LINUX_INTF_ALARM_DEV
+	bool "Linux alarm driver"
+	depends on RTC_CLASS && !ANDROID_INTF_ALARM_DEV
+	default n
+	---help---
+	  Provides non-wakeup and rtc backed wakeup alarms based on rtc or
+	  elapsed realtime, and a non-wakeup alarm on the monotonic clock.
+	  Also exports the alarm interface to user-space.
+
+endif # if LINUX_EXTRAS
+
+endmenu

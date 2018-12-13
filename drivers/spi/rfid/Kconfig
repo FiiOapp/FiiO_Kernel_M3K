@@ -1,0 +1,63 @@
+menuconfig SPI_RFID
+bool "Contactless cards IC support"
+
+if SPI_RFID
+
+config SKY1311S
+	tristate "sky1311s contactless reader IC driver support"
+	default n
+	---help---
+	  If you say yes here you get support for the skyrelay sky1311s
+	  contactless reader IC driver. You can also compile this driver
+	  as a module, choose M here: the module will be called sky1311s.
+	  If unsure, say N here.
+
+config SKY1311S_DRV_HOLD_CS
+	bool "sky1311s driver hold cs pin"
+	default n
+    depends on SKY1311S
+	---help---
+	  Select sky1311s cs pin set by its driver when in transit，or
+	  cs pin will set by jz_spi driver.
+
+config SKY1311S_SPI_SPEED
+	int "spi speed in HZ"
+	range 1000000 10000000
+	default 5000000
+    depends on SKY1311S
+	help
+	  Set skyrelay sky1311s contactless reader IC spi speed.
+	  Examples:
+	             3000000 => 3 MHZ
+                 5000000 => 5 MHZ
+
+config SKY1311T
+	tristate "sky1311t contactless reader IC driver support"
+	default n
+	---help---
+	  If you say yes here you get support for the skyrelay sky1311t
+	  contactless reader IC driver. You can also compile this driver
+	  as a module, choose M here: the module will be called sky1311t.
+	  If unsure, say N here.
+
+config SKY1311T_DRV_HOLD_CS
+	bool "sky1311t driver hold cs pin"
+	default n
+    depends on SKY1311T
+	---help---
+	  Select sky1311t cs pin set by its driver when in transit，or
+	  cs pin will set by jz_spi driver.
+
+
+config SKY1311T_SPI_SPEED
+	int "spi speed in HZ"
+	range 1000000 10000000
+	default 5000000
+    depends on SKY1311T
+	help
+	  Set skyrelay sky1311t contactless reader IC spi speed.
+	  Examples:
+	             3000000 => 3 MHZ
+                 5000000 => 5 MHZ
+
+endif

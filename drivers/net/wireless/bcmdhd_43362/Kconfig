@@ -1,0 +1,46 @@
+config BCMDHD_43362
+	tristate "Broadcom 4329/30 wireless cards support"
+	depends on MMC
+	---help---
+	  This module adds support for wireless adapters based on
+	  Broadcom 4329/30 chipset.
+
+config BCMDHD_FW_PATH
+	depends on BCMDHD_43362
+	string "Firmware path"
+	default "/system/etc/firmware/fw_bcmdhd.bin"
+	---help---
+	  Path to the firmware file.
+
+config BCMDHD_NVRAM_PATH
+	depends on BCMDHD_43362
+	string "NVRAM path"
+	default "/system/etc/firmware/nvram.txt"
+	---help---
+	  Path to the calibration file.
+
+config BCMDHD_WEXT
+	bool "Enable WEXT support"
+	depends on BCMDHD_43362 && CFG80211 = n
+	select WIRELESS_EXT
+	select WEXT_PRIV
+	help
+	  Enables WEXT support
+
+choice
+	depends on BCMDHD_43362
+	prompt "Interrupt type"
+	default BCMDHD_OOB
+	---help---
+	  Interrupt type
+config BCMDHD_OOB
+	depends on BCMDHD_43362
+	bool "Out-of-Band Interrupt"
+	---help---
+	  Interrupt from WL_HOST_WAKE.
+config BCMDHD_SDIO_IRQ
+	depends on  BCMDHD_43362
+	bool "In-Band Interrupt"
+	---help---
+	  Interrupt from SDIO DAT[1]
+endchoice

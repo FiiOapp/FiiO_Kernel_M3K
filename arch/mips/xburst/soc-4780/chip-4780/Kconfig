@@ -1,0 +1,16 @@
+
+choice
+	prompt "Board type"
+	depends on CHIP_4780
+	default CI20
+
+config CI20
+       bool "ci20"
+
+endchoice
+
+config PRODUCT_NAME
+	string
+	default "ci20" if CI20
+
+source "arch/mips/xburst/soc-4780/chip-4780/ci20/Kconfig"

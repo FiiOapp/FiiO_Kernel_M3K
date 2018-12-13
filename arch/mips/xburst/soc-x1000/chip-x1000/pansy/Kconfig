@@ -1,0 +1,23 @@
+
+choice
+prompt "BOARD version"
+depends on PRODUCT_X1000_PANSY
+default BOARD_X1000_PANSY_V13
+
+config BOARD_X1000_PANSY_V10
+bool "board x1000 pansy v10"
+depends on PRODUCT_X1000_PANSY
+
+config BOARD_X1000_PANSY_V13
+bool "board x1000 pansy v13"
+depends on PRODUCT_X1000_PANSY
+
+endchoice
+
+config BOARD_NAME
+string
+default "pansy_v10" if BOARD_X1000_PANSY_V10
+
+config BOARD_NAME
+string
+default "pansy_v13" if BOARD_X1000_PANSY_V13

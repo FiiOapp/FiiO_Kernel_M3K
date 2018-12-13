@@ -1,0 +1,15 @@
+
+1. push wakeup to target device
+   $ adb push wakeup /wakeup
+   $ adb push ivModel_v21.irf /ivModel_v21.irf
+
+2. run wakeup:
+   # /wakeup /ivModel_v21.irf &
+
+   Say "LingXi LingXi" to device.
+
+
+3. suspend test.
+   # echo "mem" > /sys/power/state
+
+   Say "LingXi LingXi" to device trgger a wakeup.

@@ -1,0 +1,19 @@
+choice
+prompt "BOARD version"
+depends on PRODUCT_MENSA
+default BOARD_MENSA_V12
+
+config BOARD_MANSA_V12
+bool "board mensa v12"
+depends on PRODUCT_MENSA
+
+endchoice
+
+config BOARD_NAME
+string
+default "mensa_v12" if BOARD_MANSA_V12
+
+
+
+
+

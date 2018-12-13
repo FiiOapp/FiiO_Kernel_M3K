@@ -1,0 +1,21 @@
+
+
+choice
+	prompt "Board type"
+	depends on SOC_4775
+	default PRODUCT_MENSA
+
+config PRODUCT_MENSA
+    bool "product mensa"
+
+endchoice
+
+config PRODUCT_NAME
+string
+	default "mensa" if PRODUCT_MENSA
+
+
+#if PRODUCT_MENSA
+source "arch/mips/xburst/soc-4775/chip-4775/mensa/Kconfig"
+#endif
+

@@ -1,0 +1,19 @@
+
+
+choice
+	prompt "Board type"
+	depends on CHIP_M200S
+	default BOARD_NEWTON2P
+
+config BOARD_NEWTON2P
+       bool "NEWTON2 PLUS"
+
+endchoice
+
+config PRODUCT_NAME
+	string
+	default "newton2p" if BOARD_NEWTON2P
+
+if BOARD_NEWTON2P
+source "arch/mips/xburst/soc-m200/chip-m200s/newton2p/Kconfig"
+endif
